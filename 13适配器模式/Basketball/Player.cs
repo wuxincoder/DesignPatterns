@@ -66,4 +66,37 @@ namespace _13适配器模式.Basketball
         }
     }
 
+    public class ForeignCenter
+    {
+        public string Name { get; set; }
+        public void 进攻()
+        {
+            Console.WriteLine($"外籍中锋 {Name} 进攻");
+        }
+        public void 防守()
+        {
+            Console.WriteLine($"外籍中锋 {Name} 防守");
+        }
+    }
+
+    class Translator : Player
+    {
+        private ForeignCenter wjzf = new ForeignCenter();
+        public Translator(string name) : base(name)
+        {
+            wjzf.Name = name;
+        }
+
+        public override void Attach()
+        {
+            wjzf.进攻();
+        }
+
+        public override void Defense()
+        {
+            wjzf.防守();
+        }
+    }
+
+
 }

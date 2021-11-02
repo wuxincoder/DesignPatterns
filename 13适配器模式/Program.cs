@@ -11,9 +11,14 @@ namespace _13适配器模式
             //Target target = new Adapter();
             //target.Request();
 
-            Player b = new Forwards("前卫1");
+            Player b = new Forwards("前峰1");
             b.Attach();
-            Player m = new Guards("后卫");
+            Player m = new Guards("后卫1");
+            m.Attach();
+
+            Player ym = new Translator("中锋1");
+            ym.Attach();
+            ym.Defense();
         }
     }
 }
